@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://6eynd8w5hv4"]
+
+[ext_resource type="PackedScene" uid="uid://bmub2n55dbnt5" path="res://sprite-man.tscn" id="1_2055b"]
+[ext_resource type="Script" uid="uid://dpigigu0cyj7g" path="res://world_scene.gd" id="1_n3trd"]
+
+[node name="WorldScene" type="Node2D" unique_id=1756443208]
+script = ExtResource("1_n3trd")
+
+[node name="Stickman" parent="." unique_id=2115570692 instance=ExtResource("1_2055b")]
+position = Vector2(500, 500)
