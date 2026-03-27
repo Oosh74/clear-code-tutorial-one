@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bdsuy024gjln8"]
+
+[ext_resource type="Script" uid="uid://cl1h6arhr6j7e" path="res://coding_boolean.gd" id="1_ave4p"]
+[ext_resource type="Texture2D" uid="uid://dq3m1ckyy5fyy" path="res://icon.svg" id="1_edvyo"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dsf4c"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ave4p"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cu786"]
+normal = Vector2(0.9996877, 0.024992192)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jcfp0"]
+normal = Vector2(0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsf4c"]
+size = Vector2(118, 110)
+
+[node name="CodingBoolean" type="Node2D" unique_id=1583381690]
+script = ExtResource("1_ave4p")
+
+[node name="BottomColl" type="Area2D" parent="." unique_id=202391567]
+position = Vector2(355, 648)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomColl" unique_id=822498581]
+shape = SubResource("WorldBoundaryShape2D_dsf4c")
+
+[node name="RightColl" type="Area2D" parent="." unique_id=2034903655]
+position = Vector2(795, 311)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightColl" unique_id=1237372006]
+shape = SubResource("WorldBoundaryShape2D_ave4p")
+
+[node name="LeftColl" type="Area2D" parent="." unique_id=1480400661]
+position = Vector2(-2, 347)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftColl" unique_id=1057329322]
+shape = SubResource("WorldBoundaryShape2D_cu786")
+
+[node name="TopColl" type="Area2D" parent="." unique_id=1521523231]
+position = Vector2(372, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopColl" unique_id=1612981499]
+shape = SubResource("WorldBoundaryShape2D_jcfp0")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1522229000]
+position = Vector2(95, 100)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1016679165]
+shape = SubResource("RectangleShape2D_dsf4c")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1113032308]
+texture = ExtResource("1_edvyo")
+
+[connection signal="body_entered" from="BottomColl" to="." method="_bottom_collision_detect"]
+[connection signal="body_entered" from="RightColl" to="." method="_right_collision_detect"]
+[connection signal="body_entered" from="LeftColl" to="." method="_on_left_coll_body_entered"]
+[connection signal="body_entered" from="TopColl" to="." method="_on_top_coll_body_entered"]
