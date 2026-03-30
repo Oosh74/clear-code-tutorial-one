@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bdsuy024gjln8"]
 
-[ext_resource type="Script" uid="uid://cl1h6arhr6j7e" path="res://coding_boolean.gd" id="1_ave4p"]
-[ext_resource type="Texture2D" uid="uid://dq3m1ckyy5fyy" path="res://icon.svg" id="1_edvyo"]
+[ext_resource type="Script" uid="uid://cl1h6arhr6j7e" path="res://coding_3_boolean.gd" id="1_qce8j"]
+[ext_resource type="Texture2D" uid="uid://dq3m1ckyy5fyy" path="res://icon.svg" id="2_sm0xf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dsf4c"]
 
@@ -18,7 +18,7 @@ normal = Vector2(0, 1)
 size = Vector2(118, 110)
 
 [node name="CodingBoolean" type="Node2D" unique_id=1583381690]
-script = ExtResource("1_ave4p")
+script = ExtResource("1_qce8j")
 
 [node name="BottomColl" type="Area2D" parent="." unique_id=202391567]
 position = Vector2(355, 648)
@@ -51,7 +51,7 @@ position = Vector2(95, 100)
 shape = SubResource("RectangleShape2D_dsf4c")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1113032308]
-texture = ExtResource("1_edvyo")
+texture = ExtResource("2_sm0xf")
 
 [connection signal="body_entered" from="BottomColl" to="." method="_bottom_collision_detect"]
 [connection signal="body_entered" from="RightColl" to="." method="_right_collision_detect"]

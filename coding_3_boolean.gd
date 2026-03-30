@@ -37,7 +37,7 @@ func _process(delta: float):
 
 
 func _bottom_collision_detect(body: Node2D) -> void:
-	print(direction_y)
+	direction_y = "up"
 
 func _right_collision_detect(body: Node2D) -> void:
 	direction_x = "left"
